@@ -80,6 +80,8 @@ function handle_addCartItem(){
         itemsAdded.push(newToAdd);
     }
 
+
+
     //Add product to cart
     let cartBoxElement = CartBoxComponnet(title, price, imgSrc);
     let newNode = document.createElement("div");
@@ -103,8 +105,9 @@ function handle_removeCartItem(){
 }
 
 function handle_changeItemQuantity() {
-    if(isNaN(this.value) || this.value < 1) {
+    if(isNaN(this.value) || this.value < 1 || this.value > 5) {
         this.value = 1;
+        alert("Ya no hay mas, Voz sospechoza: (El que vende en la esquina tiene mas y tambien mas barato ;) )");
     }
     this.value = Math.floor(this.value); //keep it integer
 
